@@ -6,6 +6,7 @@ import { faHouse, faUser } from '@fortawesome/free-solid-svg-icons';
 import { NavMyProfile } from '@/components/navbar/nav-myprofile';
 import {SearchInput} from '@/components/ui/search-input';
 import { TrendingArea } from '@/components/ui/trending-area';
+import { RecommendationArea } from '@/components/ui/recommendation-area';
 
 type Props = {
     children: ReactNode;
@@ -41,6 +42,7 @@ export default function Layout({children}: Props){
             <aside className='hidden lg:flex flex-col gap-6 sticky top-0 h-fit  w-96 px-8 py-6 border-gray-900'>
                 <SearchInput hideOnSearch />
                 <TrendingArea />
+                <RecommendationArea />
             </aside>
         </main>
     )
