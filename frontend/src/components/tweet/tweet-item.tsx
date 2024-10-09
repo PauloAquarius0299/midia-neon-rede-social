@@ -9,9 +9,10 @@ import { useState } from "react";
 
 type Props = {
     tweet: Tweet;
+    hideComments?: boolean; 
 }
 
-const TweetItem = ({tweet}: Props) => {
+const TweetItem = ({tweet, hideComments}: Props) => {
     const [liked, setLiked] = useState(tweet.liked);
 
     const handleLikeButton = () => {
@@ -47,6 +48,7 @@ const TweetItem = ({tweet}: Props) => {
         </div>
         }
         <div className='flex mt-6 text-gray-500'>
+            {!hideComments && 
             <div className='flex-1'>
                 <Link href={`/tweet/${tweet.id}`}>
                 <div className='inline-flex items-center gap-2 cursor-pointer'>
@@ -55,6 +57,7 @@ const TweetItem = ({tweet}: Props) => {
                 </div>
                 </Link>
             </div>
+            }
             <div className='flex-1'>
             <div className='inline-flex items-center gap-2 cursor-pointer'>
                     <FontAwesomeIcon icon={faRetweet} className='size-6' />
